@@ -86,3 +86,15 @@ func runesIndex(r1, r2 []rune) int {
 	}
 	return -1
 }
+
+func runesHasPrefix(r1, r2 []rune) bool {
+	length1 := len(r1)
+	length2 := len(r2)
+	return length1 >= length2 && runesEqual(r1[:length2], r2)
+}
+
+func runesHasSuffix(r1, r2 []rune) bool {
+	length1 := len(r1)
+	length2 := len(r2)
+	return length1 >= length2 && runesEqual(r1[length1-length2:], r2)
+}
